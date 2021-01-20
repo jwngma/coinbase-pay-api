@@ -13,6 +13,11 @@ var client = new Client({
 //This is what you have to complete to get this project, if you qualify this, you are elegiblefor the project
 //Send Funds api using coinbase email addres
 // we can use any  email associated to coinbase account to send any coin supported in coinbase
+
+// Use Those links as a reference
+//https://developers.coinbase.com/api/v2#introduction
+//https://developers.coinbase.com/docs/wallet/guides/send-receive
+
 app.post("/paycrypto", function (req, res) {
   client.getAccount("primary", function (err, account) {
     client.getAccount("primary", function (err, account) {
