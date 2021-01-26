@@ -21,7 +21,11 @@ const client = new Client({
   api_version: "2021-01-22",
   strictSSL: false,
 });
-
+app.get("/", (req, res, next) => {
+  res.status(200).json({
+    message: "The Coinbase pay Api is Working",
+  });
+});
 app.post("/send/", function (req, res) {
   const params = req.body;
   // const to = params.to;
