@@ -4,16 +4,9 @@ const Client = require("coinbase").Client;
 const app = express();
 app.use(express.json());
 var port = process.env.PORT || 3000;
-const API_KEY = "BFzKJUMT5s7FGoY3";
-const API_SECRET = "nMzw36oEv45TI2WqyRiidj3DaBIuGNKm";
+const API_KEY = "BFzKJUMT5s7FGoY31";
+const API_SECRET = "nMzw36oEv45TI2WqyRiidj3DaBIuGNKm1";
 const DEFAULT_ACCOUNT = "primary";
-
-// {
-// "to": "born_to_balll@yahoo.co.uk",
-// "amount": "0.000002",
-// "currency": "LTC",
-// "accountID": "4f9fc140-a966-5779-abb4-43d684d4a1be"
-// }
 
 const client = new Client({
   apiKey: API_KEY,
