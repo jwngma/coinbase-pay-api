@@ -15,6 +15,11 @@ const client = new Client({
   strictSSL: false,
 });
 
+app.get("/", (req, res, next) => {
+  res.status(200).json({
+    message: "The Coinbase pay Api is Working",
+  });
+});
 app.post("/send/", function (req, res) {
   const params = req.body;
   // const to = params.to;
