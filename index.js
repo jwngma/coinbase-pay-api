@@ -4,8 +4,12 @@ const Client = require("coinbase").Client;
 const app = express();
 app.use(express.json());
 var port = process.env.PORT || 3000;
-const API_KEY = "BFzKJUMT5s7FGoY3";
-const API_SECRET = "nMzw36oEv45TI2WqyRiidj3DaBIuGNKm";
+require("dotenv").config();
+// const API_KEY = "BFzKJUMT5s7FGoY3";
+// const API_SECRET = "nMzw36oEv45TI2WqyRiidj3DaBIuGNKm";
+
+const API_KEY = process.env.API_KEY;
+const API_SECRET = process.env.API_SECRET;
 const DEFAULT_ACCOUNT = "primary";
 
 // {
@@ -26,6 +30,7 @@ app.get("/", (req, res, next) => {
     message: "The Coinbase pay Api is Working",
   });
 });
+
 app.post("/send/", function (req, res) {
   const params = req.body;
   // const to = params.to;
@@ -95,6 +100,7 @@ function sendMoney(account, params) {
         to: `${params.to}`,
         amount: `${params.amount}`,
         currency: `${params.currency}`,
+        description: "+" + `${params.amount} ` + `${params.description}`,
       },
       function (err, tx) {
         if (err) {
