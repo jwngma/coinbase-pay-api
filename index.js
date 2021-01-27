@@ -5,8 +5,8 @@ const app = express();
 app.use(express.json());
 var port = process.env.PORT || 3000;
 require("dotenv").config();
-// const API_KEY = "BFzKJUMT5s7FGoY3";
-// const API_SECRET = "nMzw36oEv45TI2WqyRiidj3DaBIuGNKm";
+// const API_KEY = "BFzKJUMT5s7FGoY322";
+// const API_SECRET = "nMzw36oEv45TI2WqyRiidj3DaBIuGNKmaa";
 
 const API_KEY = process.env.API_KEY;
 const API_SECRET = process.env.API_SECRET;
